@@ -1,7 +1,7 @@
 {
-  "name": "devconnector",
+  "name": "doggiverse",
   "version": "1.0.0",
-  "description": "Social network for developers\\",
+  "description": "Social network for dogs\\",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
