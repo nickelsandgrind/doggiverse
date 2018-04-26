@@ -47,10 +47,10 @@ const ProfileSchema = new Schema({
     max: 40
   },
   company: {
-    type: [String]
+    type: String
   },
   website: {
-    type: [String]
+    type: String
   },
   location: {
     type: String
@@ -59,7 +59,7 @@ const ProfileSchema = new Schema({
     type: String,
     required: true
   },
-  skiills: {
+  skills: {
     type: [String],
     required: true
   },

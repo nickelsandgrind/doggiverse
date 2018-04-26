@@ -4,6 +4,10 @@ const isEmpty = require("./is-empty");
 module.exports = function validateLoginInput(data) {
   let errors = {};
 
+  // If any of these come in null or undefined it will get set to an empty string because validator only takes strings
+
+  //isEmpty checks for undefined and null
+
   data.email = !isEmpty(data.email) ? data.email : "";
   data.password = !isEmpty(data.password) ? data.password : "";
 
