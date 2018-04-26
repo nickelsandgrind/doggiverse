@@ -70,5 +70,3 @@ module.exports = function validateProfileInput(data) {
     // could use the isempty method from lodash but want to minimize libraries used
   };
 };
-
-//added validation for profile
