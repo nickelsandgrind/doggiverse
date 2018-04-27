@@ -250,8 +250,10 @@ router.delete(
           .map(item => item.removeIndex)
           .indexOf(req.params.exp_id);
 
-        // Splice out of array
-        profile.experience.splice(removeIndex, 1);
+        if (removeIndex >= 0) {
+          // Splice out of array
+          profile.experience.splice(removeIndex, 1);
+        }
 
         // Save
         profile.save().then(profile => res.json(profile));
@@ -274,8 +276,10 @@ router.delete(
           .map(item => item.removeIndex)
           .indexOf(req.params.exp_id);
 
-        // Splice out of array
-        profile.education.splice(removeIndex, 1);
+        if (removeIndex >= 0) {
+          // Splice out of array
+          profile.education.splice(removeIndex, 1);
+        }
 
         // Save
         profile.save().then(profile => res.json(profile));
@@ -292,6 +296,7 @@ router.delete(
   "/",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    // Deleting both the profile and the user
     Profile.findOneAndRemove({ user: req.user.id }).then(() => {
       User.findOneAndRemove({ _id: req.user.id }).then(() =>
         res.json({ success: true })
@@ -301,5 +306,4 @@ router.delete(
 );
 
 module.exports = router;
-
-// create routes to delete sections from profile, along with actual users and full profiles
+// completed
