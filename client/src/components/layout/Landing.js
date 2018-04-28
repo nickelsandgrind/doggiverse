@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Landing extends Component {
   render() {
@@ -8,19 +9,21 @@ class Landing extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4">Doggiverse</h1>
+                <h1 className="display-3 mb-4">
+                  The Social Network for doggie owners!
+                </h1>
                 <p className="lead">
                   {" "}
                   Create a profile for you and your doggie to share posts and
                   connect with others.
                 </p>
                 <hr />
-                <a href="register.html" className="btn btn-lg btn-info mr-2">
-                  Sign Up
-                </a>
-                <a href="login.html" className="btn btn-lg btn-light">
-                  Login
-                </a>
+                <Link to="/register" className="btn btn-lg btn-info mr-2">
+                  SIGN UP
+                </Link>
+                <Link to="/login" className="btn btn-lg btn-light">
+                  LOGIN
+                </Link>
               </div>
             </div>
           </div>
