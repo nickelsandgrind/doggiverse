@@ -10,15 +10,14 @@ class Landing extends Component {
             <div className="row">
               <div className="col-md-12 text-center">
                 <h1 className="display-3 mb-4">
-                  The Social Network for doggie owners!
+                  The Social Network for Doggie Owners!
                 </h1>
-                <p className="lead">
+                <h4 className="">
                   {" "}
-                  Create a profile for you and your doggie to share posts and
-                  connect with others.
-                </p>
+                  Create a profile to share posts and connect with others.
+                </h4>
                 <hr />
-                <Link to="/register" className="btn btn-lg btn-info mr-2">
+                <Link to="/register" className="btn btn-lg btn-primary mr-2">
                   SIGN UP
                 </Link>
                 <Link to="/login" className="btn btn-lg btn-light">
