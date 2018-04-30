@@ -8,6 +8,8 @@ class Navbar extends Component {
   onLogoutClick(e) {
     e.preventDefault();
     this.props.logoutUser();
+    // Redirect to login
+    window.location.href = "/login";
   }
 
   render() {
@@ -25,7 +27,7 @@ class Navbar extends Component {
               className="rounded-circle"
               src={user.avatar}
               alt={user.name}
-              style={{ width: "50px", marginRight: "25px" }}
+              style={{ width: "50px", marginRight: "5px" }}
               title="You must have a Gravatar connected to your email to display your image"
             />{" "}
             Logout
