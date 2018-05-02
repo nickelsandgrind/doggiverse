@@ -9,8 +9,7 @@ module.exports = function validateProfileInput(data) {
   //isEmpty checks for undefined and null
 
   data.handle = !isEmpty(data.handle) ? data.handle : "";
-  data.status = !isEmpty(data.status) ? data.status : "";
-  data.skills = !isEmpty(data.skills) ? data.skills : "";
+  data.numberofdogs = !isEmpty(data.numberofdogs) ? data.numberofdogs : "";
 
   if (!Validator.isLength(data.handle, { min: 2, max: 40 })) {
     errors.handle = "Username must be between 2 and 40 characters";
@@ -20,12 +19,8 @@ module.exports = function validateProfileInput(data) {
     errors.handle = "Profile username is required";
   }
 
-  if (Validator.isEmpty(data.status)) {
-    errors.status = "Status field is required";
-  }
-
-  if (Validator.isEmpty(data.skills)) {
-    errors.skills = "Skills field is required";
+  if (Validator.isEmpty(data.numberofdogs)) {
+    errors.numberofdogs = "Number of Dogs field is required";
   }
 
   if (!isEmpty(data.website)) {
