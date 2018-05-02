@@ -109,11 +109,12 @@ const ProfileSchema = new Schema({
     type: String
   },
 
-  bio: {
-    type: String
+  numberofdogs: {
+    type: String,
+    required: true
   },
 
-  website: {
+  bio: {
     type: String
   },
 
