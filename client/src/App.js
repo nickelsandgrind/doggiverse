@@ -19,6 +19,7 @@ import Login from "./components/auth/Login";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
+import AddDog from "./components/add-dog/AddDog";
 
 import "./App.css";
 
@@ -70,6 +71,10 @@ class App extends Component {
                   path="/edit-profile"
                   component={EditProfile}
                 />
+              </Switch>
+
+              <Switch>
+                <PrivateRoute exact path="/add-dog" component={AddDog} />
               </Switch>
             </div>
             <Footer />
