@@ -5,7 +5,7 @@ const passport = require("passport");
 
 // Load Validation
 const validateProfileInput = require("../../validation/profile");
-const validateExperienceInput = require("../../validation/dog");
+const validateDogInput = require("../../validation/dog");
 
 // Load Profile Model
 const Profile = require("../../models/Profile");
@@ -182,8 +182,8 @@ router.post(
       const newDog = {
         dogname: req.body.dogname,
         age: req.body.age,
-        breed: req.breed,
-        color: req.color,
+        breed: req.body.breed,
+        color: req.body.color,
         gender: req.body.gender,
         birthdate: req.body.birthdate,
         loves: req.body.loves,
@@ -202,7 +202,6 @@ router.post(
   }
 );
 
-// @ro
 // @route   DELETE api/profile/dog/:dog_id
 // @desc    Delete dog from Profile
 // @access  Private
@@ -214,13 +213,11 @@ router.delete(
       .then(profile => {
         // Get remove index
         const removeIndex = profile.dog
-          .map(item => item.removeIndex)
-          .indexOf(req.params.exp_id);
+          .map(item => item.id)
+          .indexOf(req.params.dog_id);
 
-        if (removeIndex >= 0) {
-          // Splice out of array
-          profile.dog.splice(removeIndex, 1);
-        }
+        // Splice out of array
+        profile.dog.splice(removeIndex, 1);
 
         // Save
         profile.save().then(profile => res.json(profile));

@@ -40,6 +40,19 @@ export const createProfile = (profileData, history) => dispatch => {
     );
 };
 
+// Add Dog
+export const addDog = (dogData, history) => dispatch => {
+  axios
+    .post("/api/profile/dog", dogData)
+    .then(res => history.push("/dashboard"))
+    .catch(err =>
+      dispatch({
+        type: GET_ERRORS,
+        payload: err.response.data
+      })
+    );
+};
+
 // Delete Account & Profile
 export const deleteAccount = () => dispatch => {
   if (window.confirm("Are you sure? This can Not be undone!")) {
