@@ -2,6 +2,14 @@ img {
   width: 100%;
 }
 
+.profileimg {
+  margin-top: -100px;
+}
+
+.rowdown {
+  margin-top: 55px;
+}
+
 .center {
   margin: auto;
   width: 50%;

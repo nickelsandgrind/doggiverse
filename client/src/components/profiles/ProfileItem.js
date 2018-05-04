@@ -8,9 +8,9 @@ class ProfileItem extends Component {
     const { profile } = this.props;
 
     return (
-      <div className="w-75 p-3 card card-body bg-light mb-3 center">
+      <div className="card card-body bg-light mb-3">
         <div className="row">
-          <div className="col-2 text-center">
+          <div className="col-2">
             <img src={profile.user.avatar} alt="" className="rounded-circle" />
           </div>
           <div className="col-lg-6 col-md-4 col-8">
@@ -30,7 +30,7 @@ class ProfileItem extends Component {
             </Link>
           </div>
 
-          <div className="col-md-4 d-none d-md-block text-center">
+          <div className="col-md-4 d-none d-md-block">
             <h4>About Me</h4>
 
             <p>{profile.bio}</p>
