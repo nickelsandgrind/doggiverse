@@ -32,8 +32,8 @@ class Profile extends Component {
             <div className="col-md-6" />
           </div>
           <ProfileHeader profile={profile} />
-          <ProfileAbout />
-          <ProfileDogs />
+          <ProfileAbout profile={profile} />
+          <ProfileDogs dog={profile.dog} />
         </div>
       );
     }

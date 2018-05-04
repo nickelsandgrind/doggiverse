@@ -1,3 +1,15 @@
+.list-group-item {
+  background-color: #fff !important;
+}
+
+/* body {
+  background: url("./img/01-01.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
 img {
   width: 100%;
 }

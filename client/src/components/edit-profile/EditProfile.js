@@ -163,16 +163,16 @@ class CreateProfile extends Component {
     // Select options for status
     const options = [
       { label: "* Select Number of Dogs", value: 0 },
-      { label: "One", value: "One" },
-      { label: "Two", value: "Two" },
-      { label: "Three", value: "Three" },
-      { label: "Four", value: "Four" },
-      { label: "Five", value: "Five" },
-      { label: "Six", value: "Six" },
-      { label: "Seven", value: "Seven" },
-      { label: "Eight", value: "Eight" },
-      { label: "Nine", value: "Nine" },
-      { label: "Ten", value: "Ten" },
+      { label: "one", value: "one" },
+      { label: "two", value: "two" },
+      { label: "three", value: "three" },
+      { label: "four", value: "four" },
+      { label: "five", value: "five" },
+      { label: "six", value: "six" },
+      { label: "seven", value: "seven" },
+      { label: "eight", value: "eight" },
+      { label: "nine", value: "nine" },
+      { label: "ten", value: "ten" },
       { label: "10+", value: "10+" }
     ];
 

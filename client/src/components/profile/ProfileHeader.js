@@ -22,7 +22,7 @@ class ProfileHeader extends Component {
             <div className="text-center">
               <h1 className="display-4 text-center">{profile.user.name}</h1>
               <p className="lead text-center">
-                Dog Owner of {profile.numberofdogs} in
+                Dog owner of {profile.numberofdogs} in
                 {isEmpty(profile.location) ? null : <p>{profile.location}</p>}
               </p>
 
