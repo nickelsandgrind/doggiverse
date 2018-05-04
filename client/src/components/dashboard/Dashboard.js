@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
 import ProfileActions from "./ProfileActions";
+import Dog from "./Dog";
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -33,7 +34,7 @@ class Dashboard extends Component {
             </p>
             <ProfileActions />
 
-            {/* DOGS */}
+            <Dog dog={profile.dog} />
 
             <div style={{ marginBottom: "60px" }} />
             <button
