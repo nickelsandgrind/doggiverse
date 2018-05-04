@@ -28,20 +28,7 @@ class Navbar extends Component {
             Dashboard
           </Link>
         </li>
-        <li className="nav-item">
-          <img
-            className="rounded-circle"
-            src={user.avatar}
-            alt={user.name}
-            style={{
-              width: "35px",
-              // border: "1px solid #593196",
-              marginRight: "30px",
-              marginLeft: "5px"
-            }}
-            title="You must have a Gravatar connected to your email to display your image"
-          />{" "}
-        </li>
+
         <li className="nav-item">
           <a
             href=""
@@ -51,6 +38,21 @@ class Navbar extends Component {
           >
             Logout
           </a>
+        </li>
+
+        <li className="nav-item">
+          <img
+            className="rounded-circle"
+            src={user.avatar}
+            alt={user.name}
+            style={{
+              width: "35px",
+              // border: "1px solid #593196",
+              // marginRight: "30px",
+              marginLeft: "20px"
+            }}
+            title="You must have a Gravatar connected to your email to display your image"
+          />{" "}
         </li>
       </ul>
     );

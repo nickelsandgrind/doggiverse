@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router-dom";
 import Moment from "react-moment";
+import { deleteDog } from "../../actions/profileActions";
 
 class Dog extends Component {
+  onDeleteClick(id) {
+    this.props.deleteDog(id);
+  }
+
   render() {
     const dog = this.props.dog.map(dog => (
       <tr key={dog._id}>
@@ -18,7 +22,12 @@ class Dog extends Component {
         </td>
 
         <td>
-          <button className="btn btn-light">Delete {dog.dogname}</button>
+          <button
+            onClick={this.onDeleteClick.bind(this, dog._id)}
+            className="btn btn-secondary"
+          >
+            Delete {dog.dogname}
+          </button>
         </td>
       </tr>
     ));
@@ -45,4 +54,8 @@ class Dog extends Component {
   }
 }
 
-export default connect(null)(withRouter(Dog));
+Dog.propTypes = {
+  deleteDog: PropTypes.func.isRequired
+};
+
+export default connect(null, { deleteDog })(Dog);

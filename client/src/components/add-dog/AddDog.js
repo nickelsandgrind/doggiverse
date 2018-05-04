@@ -69,7 +69,7 @@ class AddDog extends Component {
               <Link to="/dashboard" className="btn btn-light">
                 Go Back
               </Link>
-              <h1 className="display-4 text-center">Add Dog</h1>
+              <h1 className="display-4 text-center">Add A Dog</h1>
 
               <p className="lead text-center">
                 Feel free to add any dog you have had in the past along with
