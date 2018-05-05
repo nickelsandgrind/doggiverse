@@ -3,11 +3,30 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
+import { deletePost, likePost, unlikePost } from "../../actions/postActions";
 
 class PostItem extends Component {
   onDeleteClick(id) {
     this.props.deletePost(id);
   }
+
+  onLikeClick(id) {
+    this.props.likePost(id);
+  }
+
+  onUnlikeClick(id) {
+    this.props.unlikePost(id);
+  }
+
+  findUserLike(likes) {
+    const { auth } = this.props;
+    if (likes.filter(like => like.user === auth.user.id).length > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   render() {
     const { post, auth } = this.props;
 
@@ -32,14 +51,28 @@ class PostItem extends Component {
               })}
             </p>
 
-            <button type="button" className="btn btn-link mr-1">
-              <i className="text-info fas fa-thumbs-up" />
-              <span className="badge badge-light">{post.likes.length}</span>
+            <button
+              onClick={this.onLikeClick.bind(this, post._id)}
+              type="button"
+              className="btn btn-link mr-1"
+            >
+              <i
+                className={classnames("text-secondary fas fa-thumbs-up", {
+                  "text-primary": this.findUserLike(post.likes)
+                })}
+              />
+              <span className="badge badge-light text-muted">
+                {post.likes.length}
+              </span>
             </button>
-            <button type="button" className="btn btn-link mr-1">
+            <button
+              onClick={this.onUnlikeClick.bind(this, post._id)}
+              type="button"
+              className="btn btn-link mr-1"
+            >
               <i className="text-secondary fas fa-thumbs-down" />
             </button>
-            <Link to={`/post/${post._id}`} className="btn btn-info mr-1">
+            <Link to={`/post/${post._id}`} className="btn btn-secondary mr-1">
               Comments
             </Link>
             {post.user === auth.user.id ? (
@@ -48,7 +81,10 @@ class PostItem extends Component {
                 type="button"
                 className="btn btn-link mr-1"
               >
-                <i className="fas fa-times" />
+                <span>
+                  <i className="fas fa-times" />{" "}
+                </span>
+                Delete Post
               </button>
             ) : null}
           </div>
@@ -59,6 +95,9 @@ class PostItem extends Component {
 }
 
 PostItem.propTypes = {
+  deletePost: PropTypes.func.isRequired,
+  likePost: PropTypes.func.isRequired,
+  unlikePost: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -67,4 +106,6 @@ const mapStateToProps = state => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(PostItem);
+export default connect(mapStateToProps, { deletePost, likePost, unlikePost })(
+  PostItem
+);
