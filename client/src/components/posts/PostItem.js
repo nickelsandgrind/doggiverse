@@ -45,11 +45,11 @@ class PostItem extends Component {
             <p className="text-center">{post.name}</p>
           </div>
           <div className="col-md-10">
-            <p className="lead">
+            <div className="lead">
               {post.text.split("\n").map(i => {
                 return <div>{i}</div>;
               })}
-            </p>
+            </div>
 
             <button
               onClick={this.onLikeClick.bind(this, post._id)}
@@ -57,7 +57,7 @@ class PostItem extends Component {
               className="btn btn-link mr-1"
             >
               <i
-                className={classnames("text-secondary fas fa-thumbs-up", {
+                className={classnames("text-secondary fas fa-smile", {
                   "text-primary": this.findUserLike(post.likes)
                 })}
               />
@@ -70,7 +70,7 @@ class PostItem extends Component {
               type="button"
               className="btn btn-link mr-1"
             >
-              <i className="text-secondary fas fa-thumbs-down" />
+              <i className="text-secondary far fa-smile" />
             </button>
             <Link to={`/post/${post._id}`} className="btn btn-secondary mr-1">
               Comments

@@ -48,7 +48,7 @@ class Navbar extends Component {
             to="/dashboard"
           >
             <span>
-              <i class="far fa-edit" />
+              <i className="far fa-edit" />
             </span>
             Dashboard
           </Link>
