@@ -7,7 +7,7 @@ class ProfileDogs extends Component {
 
     const dogItems = dog.map(dog => (
       <li key={dog._id} className="list-group-item text-dark">
-        <h3 className="text-secondary mb-3">{dog.dogname}</h3>
+        <h3 className="text-primary mb-3">{dog.dogname}</h3>
         <h5>
           <p>
             Age: <span />
