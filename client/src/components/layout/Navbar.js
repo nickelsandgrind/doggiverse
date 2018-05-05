@@ -23,7 +23,7 @@ class Navbar extends Component {
           <Link className="nav-link" to="/profiles">
             {" "}
             <span>
-              <i class="fas fa-users" />{" "}
+              <i className="fas fa-users" />{" "}
             </span>Browse
           </Link>
         </li>
@@ -35,37 +35,10 @@ class Navbar extends Component {
             to="/feed"
           >
             <span>
-              <i class="fas fa-align-center" />
+              <i className="fas fa-align-center" />
             </span>
             Post Feed
           </Link>
-        </li>
-
-        <li className="nav-item">
-          <Link
-            className="nav-link"
-            // style={{ fontSize: "20px" }}
-            to="/dashboard"
-          >
-            <span>
-              <i class="far fa-address-card" />
-            </span>
-            Dashboard
-          </Link>
-        </li>
-
-        <li className="nav-item">
-          <a
-            href=""
-            onClick={this.onLogoutClick.bind(this)}
-            className="nav-link"
-            // style={{ fontSize: "20px" }}
-          >
-            {" "}
-            <span>
-              <i class="fas fa-sign-out-alt" />{" "}
-            </span>Logout
-          </a>
         </li>
 
         <li className="nav-item">
@@ -82,6 +55,28 @@ class Navbar extends Component {
             title="You must have a Gravatar connected to your email to display your image"
           />{" "}
         </li>
+
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            // style={{ fontSize: "20px" }}
+            to="/dashboard"
+          >
+            Dashboard
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <a
+            href=""
+            onClick={this.onLogoutClick.bind(this)}
+            className="nav-link"
+            // style={{ fontSize: "20px" }}
+          >
+            {" "}
+            Logout
+          </a>
+        </li>
       </ul>
     );
 
@@ -91,25 +86,20 @@ class Navbar extends Component {
           <Link className="nav-link" to="/profiles">
             {" "}
             <span>
-              <i class="fas fa-users" />{" "}
+              <i className="fas fa-users" />{" "}
             </span>Browse
           </Link>
         </li>
 
         <li className="nav-item">
           <Link className="nav-link" to="/register">
-            <span>
-              <i class="fas fa-angle-double-up" />
-            </span>
             Sign Up
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item ">
           <Link className="nav-link" to="/login">
             {" "}
-            <span>
-              <i class="fas fa-sign-in-alt" />{" "}
-            </span>Login
+            Login
           </Link>
         </li>
       </ul>

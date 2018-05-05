@@ -20,6 +20,12 @@ body {
   border-radius: 50px 20px;
 }
 
+.navbar {
+  webkit-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+}
+
 .card {
   border-radius: 20px 50px;
   background: linear-gradient(
