@@ -15,9 +15,35 @@ body {
   background-position: center;
 }
 
+.btn {
+  padding: 10px 20px;
+  border-radius: 50px 20px;
+}
+
+.card {
+  border-radius: 20px 50px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(245, 244, 251, 1) 51%,
+    rgba(236, 236, 249, 1) 100%
+  );
+  webkit-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  /* padding: 20px 20px; */
+}
+
 img {
   width: 100%;
 }
+
+.nav-link {
+  margin-top: 5px;
+}
+/* .navbar {
+  padding: 5px;
+} */
 
 .profileimg {
   margin-top: -100px;
@@ -30,8 +56,26 @@ img {
   box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
 }
 
+.outline {
+  border-radius: 200px 200px 200px 0px;
+  -moz-border-radius: 200px 200px 200px 0px;
+  -webkit-border-radius: 200px 200px 200px 0px;
+  border: 5px solid #ffffff;
+  -webkit-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+}
+
 .rowdown {
   margin-top: 55px;
+}
+.nav-item {
+  padding-left: 20px;
+  font-size: 18px;
+}
+
+.nav-item i {
+  padding-right: 5px;
 }
 
 .center {

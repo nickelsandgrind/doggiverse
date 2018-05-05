@@ -11,7 +11,11 @@ class ProfileItem extends Component {
       <div className="card card-body bg-light mb-3">
         <div className="row">
           <div className="col-2">
-            <img src={profile.user.avatar} alt="" className="rounded-circle" />
+            <img
+              src={profile.user.avatar}
+              alt=""
+              className="rounded-circle outline"
+            />
           </div>
           <div className="col-lg-6 col-md-4 col-8">
             <h3>{profile.user.name}</h3>
@@ -22,10 +26,7 @@ class ProfileItem extends Component {
               )}
             </p>
 
-            <Link
-              to={`/profile/${profile.handle}`}
-              className="btn btn-secondary"
-            >
+            <Link to={`/profile/${profile.handle}`} className="btn btn-primary">
               View Profile
             </Link>
           </div>
@@ -33,7 +34,13 @@ class ProfileItem extends Component {
           <div className="col-md-4 d-none d-md-block">
             <h4>About Me</h4>
 
-            <p>{profile.bio}</p>
+            <p className="lead">
+              {isEmpty(profile.bio) ? (
+                <span>I havn't written an bio yet</span>
+              ) : (
+                <span>{profile.bio}</span>
+              )}
+            </p>
           </div>
         </div>
       </div>

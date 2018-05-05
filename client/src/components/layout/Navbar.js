@@ -20,11 +20,36 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link className="nav-link" to="/profiles">
+            {" "}
+            <span>
+              <i class="fas fa-users" />{" "}
+            </span>Browse
+          </Link>
+        </li>
+
+        <li className="nav-item">
+          <Link
+            className="nav-link"
+            // style={{ fontSize: "20px" }}
+            to="/feed"
+          >
+            <span>
+              <i class="fas fa-align-center" />
+            </span>
+            Post Feed
+          </Link>
+        </li>
+
+        <li className="nav-item">
           <Link
             className="nav-link"
             // style={{ fontSize: "20px" }}
             to="/dashboard"
           >
+            <span>
+              <i class="far fa-address-card" />
+            </span>
             Dashboard
           </Link>
         </li>
@@ -36,7 +61,10 @@ class Navbar extends Component {
             className="nav-link"
             // style={{ fontSize: "20px" }}
           >
-            Logout
+            {" "}
+            <span>
+              <i class="fas fa-sign-out-alt" />{" "}
+            </span>Logout
           </a>
         </li>
 
@@ -46,7 +74,7 @@ class Navbar extends Component {
             src={user.avatar}
             alt={user.name}
             style={{
-              width: "35px",
+              width: "50px",
               // border: "1px solid #593196",
               // marginRight: "30px",
               marginLeft: "20px"
@@ -60,13 +88,28 @@ class Navbar extends Component {
     const guestLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
+          <Link className="nav-link" to="/profiles">
+            {" "}
+            <span>
+              <i class="fas fa-users" />{" "}
+            </span>Browse
+          </Link>
+        </li>
+
+        <li className="nav-item">
           <Link className="nav-link" to="/register">
+            <span>
+              <i class="fas fa-angle-double-up" />
+            </span>
             Sign Up
           </Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/login">
-            Login
+            {" "}
+            <span>
+              <i class="fas fa-sign-in-alt" />{" "}
+            </span>Login
           </Link>
         </li>
       </ul>
@@ -88,14 +131,7 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="mobile-nav" />
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/profiles">
-                {" "}
-                Dog Owner Profiles
-              </Link>
-            </li>
-          </ul>
+          <ul className="navbar-nav mr-auto" />
           {isAuthenticated ? authLinks : guestLinks}
         </div>
       </nav>
