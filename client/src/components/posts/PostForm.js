@@ -34,7 +34,7 @@ class PostForm extends Component {
     };
 
     this.props.addPost(newPost);
-    this.setState({ text: "" });
+    this.setState({ text: "", errors: {} });
   }
 
   onChange(e) {

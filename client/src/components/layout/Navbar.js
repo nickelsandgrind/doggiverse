@@ -42,6 +42,19 @@ class Navbar extends Component {
         </li>
 
         <li className="nav-item">
+          <Link
+            className="nav-link"
+            // style={{ fontSize: "20px" }}
+            to="/dashboard"
+          >
+            <span>
+              <i class="far fa-edit" />
+            </span>
+            Dashboard
+          </Link>
+        </li>
+
+        <li className="nav-item">
           <img
             className="rounded-circle"
             src={user.avatar}
@@ -54,16 +67,6 @@ class Navbar extends Component {
             }}
             title="You must have a Gravatar connected to your email to display your image"
           />{" "}
-        </li>
-
-        <li className="nav-item">
-          <Link
-            className="nav-link"
-            // style={{ fontSize: "20px" }}
-            to="/dashboard"
-          >
-            Dashboard
-          </Link>
         </li>
 
         <li className="nav-item">
