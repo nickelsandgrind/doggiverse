@@ -43,7 +43,7 @@ class AddDog extends Component {
       breed: this.state.breed,
       color: this.state.color,
       gender: this.state.gender,
-      birthdate: this.state.facebook,
+      birthdate: this.state.birthdate,
       loves: this.state.loves,
       dislikes: this.state.dislikes,
       favtreats: this.state.favtreats,
@@ -115,7 +115,7 @@ class AddDog extends Component {
                 <TextFieldGroup
                   placeholder="Birthdate"
                   name="birthdate"
-                  type="date"
+                  type="Date"
                   value={this.state.birthdate}
                   onChange={this.onChange}
                   error={errors.birthdate}

@@ -26,6 +26,12 @@ body {
   box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
 }
 
+.postcard {
+  margin-top:75px;
+  width: 80%;
+  margin-left: 10%;
+}
+
 .card {
   border-radius: 20px 50px;
   background: linear-gradient(
@@ -53,6 +59,18 @@ img {
 
 .profileimg {
   margin-top: -100px;
+  border-radius: 200px 200px 200px 0px;
+  -moz-border-radius: 200px 200px 200px 0px;
+  -webkit-border-radius: 200px 200px 200px 0px;
+  border: 5px solid #ffffff;
+  -webkit-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+  box-shadow: -15px 15px 11px -14px rgba(0, 0, 0, 0.18);
+}
+
+.postimg {
+  margin-top: -30px;
+  margin-left: -50px;
   border-radius: 200px 200px 200px 0px;
   -moz-border-radius: 200px 200px 200px 0px;
   -webkit-border-radius: 200px 200px 200px 0px;

@@ -32,7 +32,7 @@ class ProfileDogs extends Component {
               <span>
                 {" "}
                 Birthdate: <span />
-                <Moment format="DD/MM/YYY">{dog.birthdate}</Moment>
+                <Moment format="DD/MM/YYYY">{dog.birthdate}</Moment>
               </span>
             )}
           </p>
