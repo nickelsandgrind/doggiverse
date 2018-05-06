@@ -27,9 +27,33 @@ body {
 }
 
 .postcard {
-  margin-top:75px;
+  margin-top: 75px;
   width: 80%;
   margin-left: 10%;
+}
+
+.postactions {
+  margin-top: 80px;
+  margin-left: 35%;
+}
+.smile {
+  font-size: 1.5rem;
+}
+
+.delete {
+  font-size: 1.5rem;
+}
+
+/* .postname {
+  font-weight: 600;
+  margin-left: 0px;
+  margin-top: 0px;
+  font-size: 1.5rem;
+} */
+
+.posttext {
+  margin-top: 20px;
+  margin-left: 50px;
 }
 
 .card {

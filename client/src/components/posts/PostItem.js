@@ -42,51 +42,55 @@ class PostItem extends Component {
               />
             </a>
             <br />
-            <p className="text-center text-primary">{post.name}</p>
+            <p className="postname text-secondary ">{post.name}</p>
           </div>
           <div className="col-md-10">
-            <div className="lead">
+            <div className="lead posttext text-muted">
               {post.text.split("\n").map(i => {
                 return <div>{i}</div>;
               })}
             </div>
-
-            <button
-              onClick={this.onLikeClick.bind(this, post._id)}
-              type="button"
-              className="btn btn-link mr-1"
-            >
-              <i
-                className={classnames("text-secondary fas fa-smile", {
-                  "text-primary": this.findUserLike(post.likes)
-                })}
-              />
-              <span className="badge badge-light text-muted">
-                {post.likes.length}
-              </span>
-            </button>
-            <button
-              onClick={this.onUnlikeClick.bind(this, post._id)}
-              type="button"
-              className="btn btn-link mr-1"
-            >
-              <i className="text-secondary far fa-smile" />
-            </button>
-            <Link to={`/post/${post._id}`} className="btn btn-secondary mr-1">
-              Comments
-            </Link>
-            {post.user === auth.user.id ? (
+            <div className="postactions">
               <button
-                onClick={this.onDeleteClick.bind(this, post._id)}
+                onClick={this.onLikeClick.bind(this, post._id)}
                 type="button"
                 className="btn btn-link mr-1"
               >
-                <span>
-                  <i className="fas fa-times" />{" "}
+                <i
+                  className={classnames("text-secondary smile fas fa-smile", {
+                    "text-primary": this.findUserLike(post.likes)
+                  })}
+                />
+                <span className="badge badge-text text-muted">
+                  {post.likes.length}
                 </span>
-                Delete Post
               </button>
-            ) : null}
+              <button
+                onClick={this.onUnlikeClick.bind(this, post._id)}
+                type="button"
+                className="btn btn-link mr-1"
+              >
+                <i className="text-secondary smile far fa-smile" />
+              </button>
+              <Link
+                to={`/post/${post._id}`}
+                className="btn btn-text text-muted  mr-1"
+              >
+                Comments
+              </Link>
+              {post.user === auth.user.id ? (
+                <button
+                  onClick={this.onDeleteClick.bind(this, post._id)}
+                  type="button"
+                  className="btn btn-link mr-1"
+                >
+                  <span>
+                    <i className="fas delete text-secondary fa-times" />{" "}
+                  </span>
+                  Delete Post
+                </button>
+              ) : null}
+            </div>
           </div>
         </div>
       </div>
