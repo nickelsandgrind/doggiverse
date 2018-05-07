@@ -11,8 +11,9 @@ module.exports = function validatePostInput(data) {
   data.text = !isEmpty(data.text) ? data.text : "";
 
   // Should we allow the post to be longer?
-  if (!Validator.isLength(data.text, { min: 10, max: 300 })) {
-    errors.text = "Post must be between 10 and 300 characters";
+  if (!Validator.isLength(data.text, { min: 3, max: 300 })) {
+    errors.text =
+      "Post must be between 10 and 300 characters. Please try again.";
   }
 
   if (Validator.isEmpty(data.text)) {
