@@ -48,6 +48,25 @@ export const getPosts = () => dispatch => {
     );
 };
 
+// Get Post
+export const getPost = id => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get(`/api/posts/${id}`)
+    .then(res =>
+      dispatch({
+        type: GET_POST,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POST,
+        payload: null
+      })
+    );
+};
+
 // Get Post by ID
 // export const getPost = id => dispatch => {
 //   dispatch(setPostLoading());
@@ -92,7 +111,7 @@ export const likePost = id => dispatch => {
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: GET_POST,
         payload: err.response.data
       })
     );
@@ -105,7 +124,7 @@ export const unlikePost = id => dispatch => {
     .then(res => dispatch(getPosts()))
     .catch(err =>
       dispatch({
-        type: GET_ERRORS,
+        type: GET_POST,
         payload: err.response.data
       })
     );

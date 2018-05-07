@@ -115,7 +115,7 @@ class AddDog extends Component {
                 <TextFieldGroup
                   placeholder="Birthdate"
                   name="birthdate"
-                  type="Date"
+                  type="date"
                   value={this.state.birthdate}
                   onChange={this.onChange}
                   error={errors.birthdate}

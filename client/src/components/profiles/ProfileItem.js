@@ -26,7 +26,10 @@ class ProfileItem extends Component {
               )}
             </p>
 
-            <Link to={`/profile/${profile.handle}`} className="btn btn-primary">
+            <Link
+              to={`/profile/${profile.handle}`}
+              className="btn btn-secondary"
+            >
               View Profile
             </Link>
           </div>

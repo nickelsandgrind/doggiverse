@@ -28,7 +28,7 @@ class PostItem extends Component {
   }
 
   render() {
-    const { post, auth } = this.props;
+    const { post, auth, showActions } = this.props;
 
     return (
       <div className="card postcard card-body mb-3">
@@ -45,58 +45,70 @@ class PostItem extends Component {
             <p className="postname text-secondary ">{post.name}</p>
           </div>
           <div className="col-md-10">
-            <div className="lead posttext text-muted">
+            <div className="lead posttext">
               {post.text.split("\n").map(i => {
                 return <div>{i}</div>;
               })}
             </div>
-            <div className="postactions">
-              <button
-                onClick={this.onLikeClick.bind(this, post._id)}
-                type="button"
-                className="btn btn-link mr-1"
-              >
-                <i
-                  className={classnames("text-secondary smile fas fa-smile", {
-                    "text-primary": this.findUserLike(post.likes)
-                  })}
-                />
-                <span className="badge badge-text text-muted">
-                  {post.likes.length}
-                </span>
-              </button>
-              <button
-                onClick={this.onUnlikeClick.bind(this, post._id)}
-                type="button"
-                className="btn btn-link mr-1"
-              >
-                <i className="text-secondary smile far fa-smile" />
-              </button>
-              <Link
-                to={`/post/${post._id}`}
-                className="btn btn-text text-muted  mr-1"
-              >
-                Comments
-              </Link>
-              {post.user === auth.user.id ? (
-                <button
-                  onClick={this.onDeleteClick.bind(this, post._id)}
-                  type="button"
-                  className="btn btn-link mr-1"
-                >
-                  <span>
-                    <i className="fas delete text-secondary fa-times" />{" "}
-                  </span>
-                  Delete Post
-                </button>
-              ) : null}
-            </div>
+
+            {showActions ? (
+              <span>
+                <div className="postactions">
+                  <button
+                    onClick={this.onLikeClick.bind(this, post._id)}
+                    type="button"
+                    className="btn btn-link mr-1"
+                  >
+                    <i
+                      className={classnames(
+                        "text-secondary smile fas fa-smile",
+                        {
+                          "text-primary": this.findUserLike(post.likes)
+                        }
+                      )}
+                    />
+                    <span className="badge badge-text text-muted">
+                      {post.likes.length}
+                    </span>
+                  </button>
+                  <button
+                    onClick={this.onUnlikeClick.bind(this, post._id)}
+                    type="button"
+                    className="btn btn-link mr-1"
+                  >
+                    <i className="text-secondary smile far fa-smile" />
+                  </button>
+                  <Link
+                    to={`/post/${post._id}`}
+                    className="btn btn-text text-muted  mr-1"
+                  >
+                    Comments
+                  </Link>
+                  {post.user === auth.user.id ? (
+                    <button
+                      onClick={this.onDeleteClick.bind(this, post._id)}
+                      type="button"
+                      className="btn btn-link mr-1"
+                    >
+                      <span>
+                        <i className="fas delete text-secondary fa-times" />{" "}
+                      </span>
+                      Delete Post
+                    </button>
+                  ) : null}
+                </div>
+              </span>
+            ) : null}
           </div>
         </div>
       </div>
     );
   }
 }
+
+PostItem.defaultProps = {
+  showActions: true
+};
 
 PostItem.propTypes = {
   deletePost: PropTypes.func.isRequired,
