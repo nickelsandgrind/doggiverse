@@ -39,7 +39,7 @@ class ProfileItem extends Component {
 
             <p className="lead">
               {isEmpty(profile.bio) ? (
-                <span>I havn't written an bio yet</span>
+                <span>I haven't written an bio yet</span>
               ) : (
                 <span>{profile.bio}</span>
               )}
